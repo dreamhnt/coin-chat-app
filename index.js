@@ -16,10 +16,9 @@ io.on('connection', socket => {
     console.log('user disconnected: ', socket.id);
   });
 
-  socket.on('send message', (obj) => {
-    var msg = name + ' : ' + text;
+  socket.on('send message', (obj) => {    
     console.log(msg);
-    io.emit('receive message', msg);
+    io.emit('receive message', obj.msg);
   });
 });
 
