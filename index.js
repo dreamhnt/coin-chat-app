@@ -16,9 +16,8 @@ io.on('connection', socket => {
     console.log('user disconnected: ', socket.id);
   });
 
-  socket.on('send message', (obj) => {    
-    console.log(msg);
-    io.emit('receive message', obj.msg);
+  socket.on('send message', obj => {
+    io.emit('receive message', obj);
   });
 });
 
