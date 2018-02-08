@@ -3,9 +3,9 @@ var app = express();
 var http = require('http').Server(app); 
 var io = require('socket.io')(http);   
 
-// app.get('/',function(req, res){ 
-//   res.sendFile(__dirname + '/client.html');
-// });
+app.get('/',function(req, res){ 
+  res.sendFile(__dirname + '/client.html');
+});
 
 var count=1;
 io.on('connection', socket => { 
@@ -22,5 +22,5 @@ io.on('connection', socket => {
 });
 
 http.listen(3000, _ => {
-  console.log('server on!');
+  console.log('server on! port:3000');
 });
